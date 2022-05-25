@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @author user
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200",methods={RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT})
+@CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT})
 public class ProyectosController {
     
     @Autowired
     private IProyectosService proyecServ;
     
-    @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="*")
     @GetMapping("/proyectos/ver")
     public List<Proyectos> verProyectos(){
         return proyecServ.verProyectos();
